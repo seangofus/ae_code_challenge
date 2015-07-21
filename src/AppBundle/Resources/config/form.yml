@@ -1,0 +1,8 @@
+services:
+    #Game Form
+    appbundle_game_form:
+        class: AppBundle\Form\Type\GameMatchType
+        arguments:
+            - @move.provider
+        tags:
+            - { name: form.type, alias: appbundle_game_form }
