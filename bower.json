@@ -1,0 +1,23 @@
+{
+  "name": "gofus",
+  "version": "0.1.0",
+  "authors": [
+    "Sean Gofus <sean.gofus@advisorsexcel.com>"
+  ],
+  "description": "Front-end assets for seangofus.com",
+  "main": "bower.json",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4",
+    "requirejs": "~2.1.17",
+    "select2": "~4.0.0",
+    "underscore": "~1.8.3"
+  }
+}
