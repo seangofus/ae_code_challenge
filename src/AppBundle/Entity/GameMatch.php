@@ -38,7 +38,7 @@ class GameMatch
     /**
      * @var boolean
      *
-     * @ORM\Column(name="didPlayerWin", type="boolean")
+     * @ORM\Column(name="didPlayerWin", type="integer")
      */
     private $didPlayerWin;
 
@@ -102,7 +102,7 @@ class GameMatch
     /**
      * Set didPlayerWin
      *
-     * @param boolean $didPlayerWin
+     * @param integer $didPlayerWin
      * @return GameMatch
      */
     public function setDidPlayerWin($didPlayerWin)
@@ -115,7 +115,7 @@ class GameMatch
     /**
      * Get didPlayerWin
      *
-     * @return boolean 
+     * @return integer 
      */
     public function getDidPlayerWin()
     {
