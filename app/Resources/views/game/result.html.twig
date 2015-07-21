@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    Player Threw: {{ game_choice(entity.playerChoice) }}</br>
+    Computer Threw: {{ game_choice(entity.computerChoice) }}</br>
+
+    Result: {{ format_winner(entity.outcome) }}</br>
+
+    <a href="{{ path('game_index') }}">Play Again?</a></br>
+    <a href="{{ path('game_match_all_results') }}">View All Results</a>
+{% endblock body %}
