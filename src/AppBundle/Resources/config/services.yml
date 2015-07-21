@@ -19,3 +19,11 @@ services:
             - @result.provider
         tags:
             - { name: doctrine.event_listener, event: prePersist }
+
+    result.twig.extension:
+        class: AppBundle\Twig\ResultExtension
+        arguments:
+            - @move.provider
+            - @result.provider
+        tags:
+            - { name: twig.extension }
