@@ -1,6 +1,7 @@
-{% block content %}
+{% extends 'base.html.twig' %}
+{% block body %}
     {{ form_start( form ) }}
         {{ form_row(form.playerChoice) }}
         <input type="submit" value="Go" class="btn btn-default pull-right" />
     {{ form_end(form) }}
-{% endblock content %}
+{% endblock body %}
