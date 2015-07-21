@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form\Type;
 
+use AppBundle\Form\Subscriber\GameFormSubscriber;
 use AppBundle\Provider\MoveProvider;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\AbstractType;
@@ -39,10 +40,16 @@ class GameMatchType extends AbstractType
             'choice',
             [
                 'label' => 'Choice',
-                'required' => true
-                'choices' => $this->moveProvider->getAllMoves();
+                'required' => true,
+                'choices' => $this->moveProvider->getAllMoves()
             ]
         );
+        $builder->add(
+            'computerChoice',
+            'hidden',
+            []
+        );
+        $builder->addEventSubscriber(new GameFormSubscriber($this->moveProvider));
     }
 
     /**
