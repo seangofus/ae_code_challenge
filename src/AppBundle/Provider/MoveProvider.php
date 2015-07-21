@@ -7,7 +7,7 @@ class MoveProvider
 
     protected $moves = ['Rock', 'Paper', 'Scissors', 'Spock', 'Lizard'];
 
-    public function getMoves()
+    public function getAllMoves()
     {
         return $this->moves;
     }
