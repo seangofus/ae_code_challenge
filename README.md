@@ -1,4 +1,2 @@
-ae_code_challenge
+AE Code Challenge (Rock, Paper, Scissors, Spock, Lizard)
 =================
-
-A Symfony project created on July 20, 2015, 11:29 pm.
