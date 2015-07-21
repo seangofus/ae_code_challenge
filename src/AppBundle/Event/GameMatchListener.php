@@ -50,7 +50,7 @@ class GameMatchListener
 
         $result = $this->resultProvider->getResult($playerChoice, $computerChoice);
 
-        $gameMatch->outcome($this->resultProvider->getOutcome($result));
+        $gameMatch->setOutcome($this->resultProvider->getOutcome($result));
 
     }
 }
