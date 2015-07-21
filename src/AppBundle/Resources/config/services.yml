@@ -1,15 +1,21 @@
-parameters:
-#    app.example.class: AppBundle\Example
-
 services:
-#    app.example:
-#        class: %app.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
-#        calls:
-#            - [setService, [@service_id]]
-#        tags:
-#            - { name: twig.extension }
-#            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+    form.update_handler:
+        class: AppBundle\Form\Handler\UpdateHandler
+        arguments:
+            - @doctrine.orm.entity_manager
+            - @request_stack
+            - @templating
+            - @router
 
     move.provider:
         class: AppBundle\Provider\MoveProvider
+
+    result.provider:
+        class: AppBundle\Provider\ResultProvider
+
+    ae_business.event_listener:
+        class:  AppBundle\Event\GameMatchListener
+        arguments:
+            - @result.provider
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
