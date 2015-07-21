@@ -4,6 +4,8 @@ namespace AppBundle\Provider;
 
 class ResultProvider
 {
+    protected $outcomeNames = ['Player', 'Computer', 'Tie'];
+
     public function getResult($a, $b)
     {
         (int) $a;
@@ -15,11 +17,16 @@ class ResultProvider
     public function getOutcome($result)
     {
         if ($result == 1 || $result == 3) {
-            return 1;
-        } elseif ($result == 2 || $result == 4) {
             return 0;
+        } elseif ($result == 2 || $result == 4) {
+            return 1;
         } else {
             return 2;
         }
+    }
+
+    public function formatOutcome($outcome)
+    {
+        return $this->outcomeNames[$outcome];
     }
 }
