@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\GameMatch;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,11 +24,28 @@ class GameController extends Controller
     }
 
     /**
-     * @Route("/result", name="game_match_result")
+     * @Route("/results", name="game_match_all_results")
+     * @Template("game/resultsAll.html.twig")
+     *
+     * @return array
      */
-    public function resultAction()
+    public function resultsAllAction()
     {
-        die('result');
+        $repo = $this->get('doctrine.orm.entity_manager')->getRepository('AppBundle:GameMatch');
+        $matches = $repo->findAll();
+        return ['entities' => $matches];
+    }
+
+    /**
+     * @Route("/result/{id}", name="game_match_result", requirements={"id"="\d+"})
+     * @Template("game/result.html.twig")
+     *
+     * @param GameMatch $gameMatch
+     * @return array
+     */
+    public function resultAction(GameMatch $gameMatch)
+    {
+        return ['entity' => $gameMatch];
     }
 
     /**
@@ -46,8 +64,7 @@ class GameController extends Controller
             function (GameMatch $entity) {
                 return array(
                     'route' => 'game_match_result',
-//                    'parameters' => array('id' => $entity->getId())
-                    'parameters' => []
+                    'parameters' => array('id' => $entity->getId())
                 );
             },
             $createFormTemplate = self::UPDATE_TEMPLATE
