@@ -38,9 +38,9 @@ class GameMatch
     /**
      * @var boolean
      *
-     * @ORM\Column(name="didPlayerWin", type="integer")
+     * @ORM\Column(name="outcome", type="integer")
      */
-    private $didPlayerWin;
+    private $outcome;
 
 
     /**
@@ -100,25 +100,25 @@ class GameMatch
     }
 
     /**
-     * Set didPlayerWin
+     * Set outcome
      *
-     * @param integer $didPlayerWin
+     * @param integer $outcome
      * @return GameMatch
      */
-    public function setDidPlayerWin($didPlayerWin)
+    public function setOutcome($outcome)
     {
-        $this->didPlayerWin = $didPlayerWin;
+        $this->outcome = $outcome;
 
         return $this;
     }
 
     /**
-     * Get didPlayerWin
+     * Get outcome
      *
      * @return integer 
      */
-    public function getDidPlayerWin()
+    public function getOutcome()
     {
-        return $this->didPlayerWin;
+        return $this->outcome;
     }
 }
