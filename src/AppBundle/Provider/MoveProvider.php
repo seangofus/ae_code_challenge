@@ -14,7 +14,7 @@ class MoveProvider
 
     public function getRandomMove()
     {
-        return array_rand($this->moves, 1);
+        return array_search($this->moves[mt_rand(0, count($this->moves) - 1)], $this->moves);
     }
 
     public function getMoveName($key)
