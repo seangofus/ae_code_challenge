@@ -39,7 +39,7 @@ class GameMatchType extends AbstractType
             'playerChoice',
             'choice',
             [
-                'label' => 'Choice',
+                'label' => false,
                 'required' => true,
                 'choices' => $this->moveProvider->getAllMoves()
             ]
