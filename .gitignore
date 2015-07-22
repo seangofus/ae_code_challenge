@@ -36,6 +36,8 @@ build/
 assets
 /app/SymfonyRequirements.php
 /components/
+/node_modules
+/bower_components
 
 # Assets and user uploads
 /web/bundles/
@@ -43,6 +45,7 @@ assets
 /web/uploads/users/*
 /web/css/
 /web/js/
+/web/scss/
 /web/assets/
 /web/media/cache/
 /web/build.js
