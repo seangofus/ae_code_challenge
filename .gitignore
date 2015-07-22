@@ -45,6 +45,7 @@ assets
 /web/uploads/users/*
 /web/css/
 /web/js/
+/web/scss/
 /web/assets/
 /web/media/cache/
 /web/build.js

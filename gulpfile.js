@@ -13,8 +13,7 @@ gulp.task('copy-assets', function() {
             './bower_components/requirejs/require.js',
             './bower_components/jquery/dist/jquery.min.js',
             './bower_components/underscore/underscore.js',
-            './bower_components/bootstrap-sass/assets/javascripts/**/*.js',
-            './bower_components/select2/dist/js/select2.min.js',
+            './bower_components/bootstrap-sass/assets/javascripts/**/*.js'
         ],
         scss: [
             './bower_components/bootstrap-sass/assets/stylesheets/**/*.scss'

@@ -1,7 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-    {{ form_start( form ) }}
+{% block content %}
+    <section id="game-form" class="holder">
+        <h1>Rock, Paper, Scissor, Spock, Lizard</h1>
+        <small>The Ultimate Decision Maker</small>
+        {{ form_start( form ) }}
         {{ form_row(form.playerChoice) }}
-        <input type="submit" value="Go" class="btn btn-default pull-right" />
-    {{ form_end(form) }}
-{% endblock body %}
+        <input type="submit" value="LETS DO THIS" class="btn btn-default" />
+        {{ form_end(form) }}
+    </section>
+{% endblock content %}

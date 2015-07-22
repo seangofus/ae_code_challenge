@@ -1,26 +1,28 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-    {% if entities %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Player Choice</th>
-                    <th>Computer Choice</th>
-                    <th>Result</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for entity in entities %}
+{% block content %}
+    <section class="holder">
+        {% if entities %}
+            <table class="table table-hover">
+                <thead>
                     <tr>
-                        <th>{{ game_choice(entity.playerChoice) }}</th>
-                        <th>{{ game_choice(entity.computerChoice) }}</th>
-                        <th>{{ format_winner(entity.outcome) }}</th>
+                        <th>Player Choice</th>
+                        <th>Computer Choice</th>
+                        <th>Result</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <a href="{{ path('game_index') }}">Back To Game</a>
-    {% else %}
-        No Match Results
-    {% endif %}
-{% endblock body %}
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <th>{{ game_choice(entity.playerChoice) }}</th>
+                            <th>{{ game_choice(entity.computerChoice) }}</th>
+                            <th>{{ format_winner(entity.outcome) }}</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ path('game_index') }}">Back To Game</a>
+        {% else %}
+            No Match Results
+        {% endif %}
+    </section>
+{% endblock content %}

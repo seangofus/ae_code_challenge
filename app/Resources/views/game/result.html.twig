@@ -1,10 +1,22 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-    Player Threw: {{ game_choice(entity.playerChoice) }}</br>
-    Computer Threw: {{ game_choice(entity.computerChoice) }}</br>
+{% block content %}
+    <section class="holder">
 
-    Result: {{ format_winner(entity.outcome) }}</br>
+        {% set outcome = format_winner(entity.outcome) %}
+        {% if outcome == 'Player' %}
+            <h1>Bazinga! You Won!</h1>
+        {% elseif outcome == 'Computer' %}
+            <h1>Wha Wha, <small>(sad trombone). The computer won.</small></h1>
+        {% else %}
+            <h1>Tie! Try Again</h1>
+        {% endif %}
 
-    <a href="{{ path('game_index') }}">Play Again?</a></br>
-    <a href="{{ path('game_match_all_results') }}">View All Results</a>
-{% endblock body %}
+        Player Threw: {{ game_choice(entity.playerChoice) }}</br>
+        Computer Threw: {{ game_choice(entity.computerChoice) }}</br>
+
+        <div class="clearfix">
+            <a href="{{ path('game_index') }}" class="pull-left">Play Again?</a>
+            <a href="{{ path('game_match_all_results') }}" class="pull-right">View All Results</a>
+        </div>
+    </section>
+{% endblock content %}
