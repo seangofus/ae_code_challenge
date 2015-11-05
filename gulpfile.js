@@ -31,8 +31,6 @@ gulp.task('compile-sass', function() {
     gulp.src('app/Resources/assets/scss/style.scss')
        .pipe(sass())
        .pipe(gulp.dest('web/css'));
-
-    //gulp.src('app/Resources/assets/css/**').pipe(gulp.dest('web/css'));
 });
 
 gulp.task('js-dump', function() {

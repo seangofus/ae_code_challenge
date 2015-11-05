@@ -37,13 +37,10 @@ class GameMatchListener
      */
     public function prePersist(LifecycleEventArgs $args)
     {
-        /** @var Business $business */
+        /** @var GameMatch $gameMatch */
         if (!(($gameMatch = $args->getObject()) instanceof GameMatch)) {
             return;
         }
-
-        /** @var ObjectManager $em */
-        $om = $args->getObjectManager();
 
         $playerChoice = $gameMatch->getPlayerChoice();
         $computerChoice = $gameMatch->getComputerChoice();
@@ -51,6 +48,5 @@ class GameMatchListener
         $result = $this->resultProvider->getResult($playerChoice, $computerChoice);
 
         $gameMatch->setOutcome($this->resultProvider->getOutcome($result));
-
     }
 }
