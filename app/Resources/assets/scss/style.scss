@@ -1,0 +1,80 @@
+@import "web/scss/lib/bootstrap";
+@import "vars";
+
+html, body, .container {
+    color: #fff;
+    height: 100%;
+}
+
+a {
+    color: $purple;
+
+    &:hover {
+        color: lighten($purple, 10%);
+        text-decoration: none;
+    }
+}
+
+input[type=submit] {
+    background: $purple;
+    color: #fff;
+}
+
+.container {
+    display: table;
+    vertical-align: middle;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.half {
+    width: 50%;
+}
+
+.holder {
+    background: $dark_gray;
+    padding: 20px;
+    h1 {
+        font-size: 1.8vw;
+        text-align: center;
+    }
+    small {
+        display: block;
+        font-size: 1vw;
+        text-align: center;
+    }
+    select {
+        -webkit-appearance: menulist-button;
+        color: $dark_gray;
+        font-size: 16px;
+        font-weight: 600;
+        height: 50px;
+        margin: 20px 0;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    input[type=submit] {
+        border: none;
+        display: block;
+        height: 50px;
+        width: 100%;
+
+        &:hover {
+            background: lighten($purple, 10%);
+            color: #fff;
+        }
+
+        &:focus, &:active {
+            outline: none;
+            background: lighten($purple, 10%);
+            color: #fff;
+        }
+    }
+}
+
