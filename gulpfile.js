@@ -2,10 +2,7 @@ var gulp = require('gulp');
 var _    = require('./bower_components/underscore/underscore.js');
 var sass = require('gulp-sass');
 
-
-gulp.task('default', function() {
-   console.log('TESTING');
-});
+gulp.task('default', ['copy-assets', 'js-dump', 'compile-sass']);
 
 gulp.task('copy-assets', function() {
    var assets = {
